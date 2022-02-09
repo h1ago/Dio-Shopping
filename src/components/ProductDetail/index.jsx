@@ -11,30 +11,32 @@ import {
     FieldChooseSizeTitle,
     FieldChooseSizeButtonWrapper,
     FieldChooseSizeTitleButton,
-    AddButton
+    AddButton,
+    LinkBackHome,
+    LinkBackHomeTitle
 
 
 } from "./styles"
 
-import image from '../../assets/products/brasil.jpg'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
-export default function ProductDetail(){
 
+export default function ProductDetail(props){
+    const product = props.product;
     const [selectedSize, setSelectedSize] = useState("");
-
     const handleClickButton = (e) => {setSelectedSize(e)};
 
     return (
         <Container>
-
-            <ProductImage src={image} />
+            <ProductImage src={require('../../assets/products/' + product.image)}/>
             <WrapperDetails>
 
-                <ProductName>CAMISA SUEDE SPAN</ProductName>
+                <ProductName>{product.name}</ProductName>
 
                 <DetailPrices>
-                    <ProductPrice>R$ 189,90</ProductPrice>
-                    <ProductInstallment>3x R$ 63,30</ProductInstallment>
+                    <ProductPrice>{product.actual_price}</ProductPrice>
+                    <ProductInstallment>{product.installments}</ProductInstallment>
                 </DetailPrices>
 
                 <FieldChooseSize>
@@ -42,16 +44,31 @@ export default function ProductDetail(){
                     <FieldChooseSizeTitle>Escolha o tamanho:</FieldChooseSizeTitle>
 
                     <FieldChooseSizeButtonWrapper>
-                        <FieldChooseSizeTitleButton onClick={ () => handleClickButton("P")  } active={selectedSize} >P</FieldChooseSizeTitleButton>
-                        <FieldChooseSizeTitleButton onClick={ () => handleClickButton("M")  } active={selectedSize} >M</FieldChooseSizeTitleButton>
+
+                        {
+                            product.sizes.map( (elementSize, index) => (
+                                elementSize.available && 
+                                <FieldChooseSizeTitleButton
+                                    key={index} 
+                                    onClick={ () => handleClickButton(elementSize.size)  } 
+                                    active={selectedSize}
+                                >
+                                    {elementSize.size}
+                                </FieldChooseSizeTitleButton>
+                            ))
+                        }
+
                     </FieldChooseSizeButtonWrapper>
 
                 </FieldChooseSize>
 
                 <AddButton>ADICIONAR À SACOLA</AddButton>
+                <LinkBackHome to="/">
+                    <LinkBackHomeTitle><FontAwesomeIcon icon={faArrowLeft} /> Voltar para a lista de produtos</LinkBackHomeTitle>
+                </LinkBackHome>
 
             </WrapperDetails>
-
+            
         </Container>
     )
 }

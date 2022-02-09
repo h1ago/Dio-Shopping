@@ -18,7 +18,6 @@ import {
     BoxPrice,
     ProductPrice,
     ProductPriceInstallment,
-
     CartFooter,
     Title,
     ButtonBackArrow,

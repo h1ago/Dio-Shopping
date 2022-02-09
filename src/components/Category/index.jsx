@@ -1,14 +1,20 @@
 import React from "react"
 import { Container, Title, TitleClub } from "./styles"
+import mock from '../../service/mock.json';
 
 export default function Category(){
+    const listProducts = mock;
+    const listCategory = listProducts.filter(product => product.name_category);
+
     return (
         <Container>
             <Title>CATEGORIAS</Title>
 
-            <TitleClub>Clubes Brasileiros (2)</TitleClub>
-            <TitleClub>Clubes Europeus (5)</TitleClub>
-            <TitleClub>Seleções Internacionais (10)</TitleClub>
+            {   
+                listCategory.map((category, index) => {
+                    return (<TitleClub key={index} >{category.name_category}</TitleClub>)
+                })
+            }
         </Container>
     )
 }

@@ -5,9 +5,12 @@ import { Container, WrapperFooter, WrapperHeader, WrapperBody } from './styles';
 
 import ProductDetail from '../../components/ProductDetail';
 
+import { useLocation } from "react-router-dom";
 
+export default function ProductInfo(){
+    const location = useLocation();
+    const productSelected = location.state.product;
 
-export default function Product(){
     return (
         <>
             <Container>
@@ -16,7 +19,7 @@ export default function Product(){
                 </WrapperHeader>
 
                 <WrapperBody>
-                    <ProductDetail />
+                    <ProductDetail product={productSelected}/>
                 </WrapperBody>
 
                 <WrapperFooter>

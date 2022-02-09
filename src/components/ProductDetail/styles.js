@@ -1,23 +1,26 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
     display: flex;
     margin: auto;
     width: 700px;
+    height: 500px;
 `;
 
 export const ProductImage = styled.img`
     width: 50%;
-    height: 40vh;
-    background: #333;
+    height: 100%;
+    background: none;
     box-shadow: 0 4px 60px rgb(0 0 0 / 20%);
     border-radius: 15px;
+    object-fit: contain;
 `;
 
 export const WrapperDetails = styled.div`
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
     padding: 10px 15px;
 `;
 
@@ -84,4 +87,21 @@ export const AddButton = styled.button`
     border: none;
     background-color: #10567E;
     color: #fff;
+`;
+
+export const LinkBackHome = styled(Link)`
+    display: flex;
+    width: 100%;
+    margin-block-start: auto;
+    text-decoration: none;
+`;
+export const LinkBackHomeTitle = styled.p`
+    color: #10567E;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    svg{
+        margin-right: 20px;
+    }
 `;

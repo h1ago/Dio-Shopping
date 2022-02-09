@@ -1,8 +1,8 @@
-import React from "react"
+import React from "react";
+import { Link } from "react-router-dom";
 import {
     Container, 
     Card,
-    Link,
     ProductImage, 
     ProductDiscount, 
     ProductName, 
@@ -10,28 +10,43 @@ import {
     ProductPrice 
 } from "./styles"
 
-import image from '../../assets/products/brasil.jpg'
+import mock from '../../service/mock.json';
 
 
 export default function Products(){
+    const listProducts = mock;
 
     return (
         <Container>
 
-            <Card>
-                <Link href="#">
-                    <ProductImage src={image}/>
-                    <ProductDiscount>- 50%</ProductDiscount>
-                    <ProductName>Brasil 2022</ProductName>
-                    <ProductPriceOld>R$ 149,90</ProductPriceOld>
-                    <ProductPrice>R$ 99,90</ProductPrice>
+            {
+                listProducts.map( (product, index) => (
+                        <Card key={index}>
+                            <Link
+                                to={`/produto/${product.id}`}
+                                state={{product: product}}
+                            > 
+                                <ProductImage src={require('../../assets/products/' + product.image)}/>
+                                {
+                                    product.discount_percentage !== "" &&   
+                                    <ProductDiscount>- {product.discount_percentage}%</ProductDiscount>
+                                }
+                                <ProductName>{product.name}</ProductName>
+                                
+                                {
+                                    product.discount_percentage !== "" 
+                                    ?<>
+                                        <ProductPriceOld>{product.regular_price}</ProductPriceOld>
+                                        <ProductPrice>{product.actual_price}</ProductPrice>
+                                    </>
+                                    :<ProductPrice>{product.actual_price}</ProductPrice>
+                                }
 
-                </Link>
-            </Card>
-        
-        
-            
-            
+                            </Link>
+                        </Card>
+                ))
+            }
+
         </Container>
     )
 }

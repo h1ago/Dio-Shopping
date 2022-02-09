@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { Container, Logo, Nav, CartButton } from './styles';
 import Modal from './Modal';
 import logo from '../../assets/logo.png';
+import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
@@ -22,7 +23,7 @@ export default function Header(){
 
             <Nav>
                 <ul>
-                    <li><a href='#'>HOME</a></li>
+                    <li><Link to="/">HOME</Link></li>
                     <li><a href='#'>CONTATO</a></li>
                 </ul>
             </Nav>

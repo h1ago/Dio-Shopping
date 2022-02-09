@@ -13,6 +13,10 @@ export const Card = styled.div`
     width: 100%;
     height: 300px;
     text-align: center;
+
+    a {
+        text-decoration: none;
+    }
 `;
 
 export const Link = styled.a`

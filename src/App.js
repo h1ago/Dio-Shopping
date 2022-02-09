@@ -1,13 +1,12 @@
-import Home from "./pages/Home";
-import Product from "./pages/Product";
 
+import Routes from './routes.js';
 
 function App() {
   return (
-    <>
-      {/* <Home/> */}
-      <Product/>
-    </>
+      <>
+        <Routes />
+      </>
+      
   );
 }
 
