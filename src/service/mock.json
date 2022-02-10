@@ -2,13 +2,13 @@
     {   
         "id": 1,
         "name": "CAMISA DA ALEMANHA 2020",
-        "on_sale": false,
         "regular_price": "R$ 299,90",
         "actual_price": "R$ 299,90",
         "discount_percentage": "",
         "installments": "3x R$ 99,96",
         "image": "alemanha.jpg",
         "name_category": "Seleções",
+        "size": "",
         "sizes": [
             { "available": false, "size": "PP"},
             { "available": true, "size": "P"},
@@ -21,13 +21,13 @@
     {   
         "id": 2,
         "name": "CAMISA DO BRASIL 2020",
-        "on_sale": false,
         "regular_price": "R$ 199,90",
         "actual_price": "R$ 99,90",
         "discount_percentage": "50",
         "installments": "1x R$ 99,90",
         "image": "brasil.jpg",
         "name_category": "Seleções",
+        "size": "",
         "sizes": [
             { "available": true, "size": "PP"},
             { "available": true, "size": "P"},
@@ -40,13 +40,13 @@
     {
         "id": 3,
         "name": "CAMISA DO FLAMENGO 2020",
-        "on_sale": false,
         "regular_price": "R$ 199,90",
         "actual_price": "R$ 199,90",
         "discount_percentage": "",
         "installments": "2x R$ 99,90",
         "image": "fla.jpg",
         "name_category": "Clubes brasileiros",
+        "size": "",
         "sizes": [
             { "available": true, "size": "PP"},
             { "available": true, "size": "P"},
@@ -59,13 +59,13 @@
     {
         "id": 4,
         "name": "CAMISA DO ARSENAL 2020",
-        "on_sale": false,
         "regular_price": "R$ 199,90",
         "actual_price": "R$ 199,90",
         "discount_percentage": "",
         "installments": "2x R$ 99,90",
         "image": "arsenal.jpg",
         "name_category": "Clubes internacionais",
+        "size": "",
         "sizes": [
             { "available": true, "size": "PP"},
             { "available": true, "size": "P"},

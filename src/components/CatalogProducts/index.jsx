@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import {
     Container, 
     Card,
@@ -10,17 +9,20 @@ import {
     ProductPrice 
 } from "./styles"
 
-import mock from '../../service/mock.json';
+import { Link } from "react-router-dom";
+import { useSelector } from 'react-redux';
 
 
-export default function Products(){
-    const listProducts = mock;
+
+export default function CatalogProducts(){
+
+    const catalog = useSelector( state => state.catalogProducts );
 
     return (
         <Container>
 
             {
-                listProducts.map( (product, index) => (
+                catalog.products.map( (product, index) => (
                         <Card key={index}>
                             <Link
                                 to={`/produto/${product.id}`}

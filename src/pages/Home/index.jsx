@@ -1,13 +1,21 @@
-import React from "react"
-import Category from "../../components/Category"
-import Footer from "../../components/Footer"
-import Header from "../../components/Header"
-import Products from "../../components/Products"
-import { Container, WrapperCategory, WrapperFooter, WrapperHeader, WrapperProducts } from './styles'
+import React, {useEffect} from "react"
+import { Container, WrapperCategory, WrapperFooter, WrapperHeader, WrapperCatalogProducts } from './styles';
+import Category from "../../components/Category";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
+import CatalogProducts from "../../components/CatalogProducts";
+
+import {useDispatch} from 'react-redux';
 
 
 
 export default function Home(){
+    const dispatch = useDispatch();
+
+    useEffect( () => {
+        dispatch({type: 'GET_CATALOG_PRODUCTS'});
+    }, [] );
+
     return (
         <>
             <Container>
@@ -19,9 +27,9 @@ export default function Home(){
                     <Category/>
                 </WrapperCategory>
 
-                <WrapperProducts>
-                    <Products/>
-                </WrapperProducts>
+                <WrapperCatalogProducts>
+                    <CatalogProducts/>
+                </WrapperCatalogProducts>
 
                 <WrapperFooter>
                     <Footer/>

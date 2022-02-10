@@ -18,14 +18,17 @@ import {
 
 } from "./styles"
 
+import {useDispatch, useSelector} from 'react-redux';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 
 export default function ProductDetail(props){
     const product = props.product;
+    const {cart} = useSelector( state => state.cart );
+    const dispatch = useDispatch();
     const [selectedSize, setSelectedSize] = useState("");
-    const handleClickButton = (e) => {setSelectedSize(e)};
+    const handleClickButtonSize = (e) => {setSelectedSize(e)};
 
     return (
         <Container>
@@ -50,7 +53,7 @@ export default function ProductDetail(props){
                                 elementSize.available && 
                                 <FieldChooseSizeTitleButton
                                     key={index} 
-                                    onClick={ () => handleClickButton(elementSize.size)  } 
+                                    onClick={ () => handleClickButtonSize(elementSize.size)  } 
                                     active={selectedSize}
                                 >
                                     {elementSize.size}
@@ -62,7 +65,31 @@ export default function ProductDetail(props){
 
                 </FieldChooseSize>
 
-                <AddButton>ADICIONAR À SACOLA</AddButton>
+                <AddButton 
+                    onClick={
+                        () => {
+                            product.size = selectedSize;
+                           
+                            dispatch({
+                                type: 'ADD_TO_CATALOG',
+                                payload: {product: {
+                                    id: product.id,
+                                    name: product.name,
+                                    image: product.image,
+                                    size: product.size,
+                                    actual_price: product.actual_price,
+                                    installments: product.installments,
+                                    quantity: 1
+                                } }
+                                /* payload: {cart: cart} */
+                            });
+                        }
+                    }
+                
+                >
+                    ADICIONAR À SACOLA
+                </AddButton>
+                
                 <LinkBackHome to="/">
                     <LinkBackHomeTitle><FontAwesomeIcon icon={faArrowLeft} /> Voltar para a lista de produtos</LinkBackHomeTitle>
                 </LinkBackHome>
