@@ -14,6 +14,8 @@ export const WrapperHeader = styled.div`
 
 export const WrapperBody = styled.div`
     margin-top: 20px;
+    padding: 40px;
+    
 `;
 export const WrapperFooter = styled.div`
 
