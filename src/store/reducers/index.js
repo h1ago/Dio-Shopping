@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
-import catalogProducts from './catalogProducts.reduce';
+import catalog from './catalog.reduce';
 import cart from './cart.reduce';
 
 export default combineReducers({
-    catalogProducts,
+    catalog,
     cart
 });

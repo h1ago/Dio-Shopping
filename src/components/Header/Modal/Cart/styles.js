@@ -5,7 +5,7 @@ export const Container = styled.div`
     position: absolute;
     justify-content: flex-end;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: rgba(16, 86, 126, 0.4);
     overflow-y: auto;
     z-index: 1;

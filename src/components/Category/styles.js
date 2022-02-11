@@ -13,10 +13,13 @@ export const Title = styled.h1`
     text-transform: uppercase;
 `;
 
-export const TitleClub = styled.h2`
+export const TitleClub = styled.button`
     margin-bottom: 10px;
     text-align: left;
     font-size: 14px;
     font-weight: 100;
+    background-color: none;
     color: #858585;
+    border: none;
+    cursor: pointer;
 `;

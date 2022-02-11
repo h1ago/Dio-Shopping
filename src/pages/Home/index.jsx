@@ -5,16 +5,7 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import CatalogProducts from "../../components/CatalogProducts";
 
-import {useDispatch} from 'react-redux';
-
-
-
 export default function Home(){
-    const dispatch = useDispatch();
-
-    useEffect( () => {
-        dispatch({type: 'GET_CATALOG_PRODUCTS'});
-    }, [] );
 
     return (
         <>

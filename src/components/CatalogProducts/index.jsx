@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {
     Container, 
     Card,
@@ -10,13 +10,17 @@ import {
 } from "./styles"
 
 import { Link } from "react-router-dom";
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 
 
 export default function CatalogProducts(){
-
-    const catalog = useSelector( state => state.catalogProducts );
+    const dispatch = useDispatch();
+    const catalog = useSelector( state => state.catalog );
+    
+    useEffect( () => {
+        dispatch({type: 'GET_CATALOG_PRODUCTS'});
+    }, [] );
 
     return (
         <Container>
@@ -30,13 +34,13 @@ export default function CatalogProducts(){
                             > 
                                 <ProductImage src={require('../../assets/products/' + product.image)}/>
                                 {
-                                    product.discount_percentage !== "" &&   
+                                    product.discount_percentage !== null &&   
                                     <ProductDiscount>- {product.discount_percentage}%</ProductDiscount>
                                 }
                                 <ProductName>{product.name}</ProductName>
                                 
                                 {
-                                    product.discount_percentage !== "" 
+                                    product.discount_percentage !== null 
                                     ?<>
                                         <ProductPriceOld>{product.regular_price}</ProductPriceOld>
                                         <ProductPrice>{product.actual_price}</ProductPrice>

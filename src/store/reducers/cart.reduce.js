@@ -64,7 +64,7 @@ export default function(state = INITIAL_STATE, action){
             console.log(updateProductsCart);
             return {
                 ...state,
-                    productsCart: [...updateProductsCart]
+                productsCart: [...updateProductsCart]
             }
         
         break;

@@ -17,9 +17,6 @@ export default function Header(){
     const openModal = () => setShowModal(true);
     const closeModal = () => setShowModal(false);
 
-    console.log(productsCart);
-    console.log(productsCart.length);
-
     return(
         <Container>
 
@@ -30,7 +27,7 @@ export default function Header(){
             <Nav>
                 <ul>
                     <li><Link to="/">HOME</Link></li>
-                    <li><a href='#'>CONTATO</a></li>
+                    <li><Link to="/contato">CONTATO</Link></li>
                 </ul>
             </Nav>
 

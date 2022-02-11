@@ -49,16 +49,53 @@ export default function ProductDetail(props){
                     <FieldChooseSizeButtonWrapper>
 
                         {
-                            product.sizes.map( (elementSize, index) => (
-                                elementSize.available && 
-                                <FieldChooseSizeTitleButton
-                                    key={index} 
-                                    onClick={ () => handleClickButtonSize(elementSize.size)  } 
-                                    active={selectedSize}
-                                >
-                                    {elementSize.size}
-                                </FieldChooseSizeTitleButton>
-                            ))
+                            product.size_pp && 
+                            <FieldChooseSizeTitleButton
+                                onClick={ () => handleClickButtonSize('PP')  } 
+                                active={selectedSize}
+                            >
+                                PP
+                            </FieldChooseSizeTitleButton>
+                        }
+
+                        {
+                            product.size_p && 
+                            <FieldChooseSizeTitleButton
+                                onClick={ () => handleClickButtonSize('P')  } 
+                                active={selectedSize}
+                            >
+                                P
+                            </FieldChooseSizeTitleButton>
+                        }
+
+                        {
+                            product.size_m && 
+                            <FieldChooseSizeTitleButton
+                                onClick={ () => handleClickButtonSize('M')  } 
+                                active={selectedSize}
+                            >
+                                M
+                            </FieldChooseSizeTitleButton>
+                        }
+
+                        {
+                            product.size_g && 
+                            <FieldChooseSizeTitleButton
+                                onClick={ () => handleClickButtonSize('G')  } 
+                                active={selectedSize}
+                            >
+                                G
+                            </FieldChooseSizeTitleButton>
+                        }
+
+                        {
+                            product.size_gg && 
+                            <FieldChooseSizeTitleButton
+                                onClick={ () => handleClickButtonSize('GG')  } 
+                                active={selectedSize}
+                            >
+                                GG
+                            </FieldChooseSizeTitleButton>
                         }
 
                     </FieldChooseSizeButtonWrapper>

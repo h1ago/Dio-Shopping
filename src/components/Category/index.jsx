@@ -1,10 +1,21 @@
-import React from "react"
+import React, {useEffect} from "react"
 import { Container, Title, TitleClub } from "./styles"
+import { useSelector, useDispatch } from "react-redux";
 import mock from '../../service/mock.json';
 
 export default function Category(){
-    const listProducts = mock;
-    const listCategory = listProducts.filter(product => product.name_category);
+    const dispatch = useDispatch();
+    const listCategory = useSelector( state => state.catalog.categories );
+
+    useEffect( () => {
+        dispatch({type: 'GET_CATEGORY_PRODUCTS'});
+    }, [] );
+
+    function handleClick(category){
+       
+        dispatch({type: 'FILTER_CATALOG', payload: category});
+    }
+
 
     return (
         <Container>
@@ -12,7 +23,14 @@ export default function Category(){
 
             {   
                 listCategory.map((category, index) => {
-                    return (<TitleClub key={index} >{category.name_category}</TitleClub>)
+                    return (
+                            <TitleClub 
+                                onClick={() => handleClick(category)}
+                                key={category.id}
+                            >
+                                {category.name}
+                            </TitleClub>
+                        );
                 })
             }
         </Container>
