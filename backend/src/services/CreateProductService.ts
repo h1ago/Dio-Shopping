@@ -5,7 +5,7 @@ interface IProduct {
     name: string;
     regular_price: string;
     actual_price: string;
-    discount_percentage: string;
+    discount_percentage: number;
     size: string;
     name_category: string;
     installments: string;
