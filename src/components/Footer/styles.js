@@ -2,10 +2,13 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     display: flex;
-    min-height: 350px;
     justify-content: center;
+    align-items: center;
 
     h2{
-        font-weight: bold;
+        color: #10567E;
+        font-size: 0.87rem;
+        text-transform: uppercase;
+        font-weight: 600;
     }
 `;

@@ -31,7 +31,8 @@ export const Nav = styled.nav`
 
     a{
         text-decoration: none;
-        color: #062437;
+        color: #10567E;
+        font-weight: 300;
         line-height: 50px;
     }
 `;

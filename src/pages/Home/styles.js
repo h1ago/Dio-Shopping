@@ -28,7 +28,7 @@ export const WrapperCatalogProducts = styled.div`
     grid-column-end: 3;
 `;
 export const WrapperFooter = styled.div`
-
+    margin-top: 50px;
     grid-column-start: 1;
     grid-column-end: 3;
 `;

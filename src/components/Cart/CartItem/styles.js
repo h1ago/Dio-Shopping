@@ -25,5 +25,6 @@ export const ProductPrice = styled.span`
 
 export const ProductPriceInstallment = styled.span`
     font-size: 16px;
+    width: 90px;
     color: #8b8b8b;
 `;
