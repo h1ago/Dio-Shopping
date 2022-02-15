@@ -1,6 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom";
-import Cart from './Cart'
+import Cart from '../Cart'
 import { Container } from "./styles"
 
 export default function Modal(props){

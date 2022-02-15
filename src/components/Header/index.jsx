@@ -1,12 +1,10 @@
 import React, {useState} from 'react';
-import { Container, Logo, Nav, CartButton } from './styles';
-import Modal from './Modal';
-import logo from '../../assets/logo.png';
 import { Link } from "react-router-dom";
 import { useSelector } from 'react-redux';
-
+import { Container, Logo, Nav, CartButton } from './styles';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
+import Modal from '../Modal';
 
 export default function Header(){
 
@@ -21,7 +19,7 @@ export default function Header(){
         <Container>
 
             <Logo>
-                <img src={logo} />
+                <img src={require('../../assets/logo.png')} alt="logo" />
             </Logo>
 
             <Nav>

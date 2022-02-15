@@ -4,8 +4,8 @@ import { Container } from "./styles"
 export default function Error(){
     return (
         <Container>
-            <h1>💥 CABOOM 💥</h1>  
-            <h2> Erro interno... </h2> 
+            <h1>ERROR!</h1>  
+            <p> Ocorreu um erro inesperado. Tente novamente.</p> 
         </Container>
     )
 }

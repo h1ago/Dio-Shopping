@@ -10,6 +10,8 @@ export const Container = styled.div`
 
 export const Logo = styled.div`
     margin-left: 40px;
+    flex-grow: 1;
+    text-align: center;
     img {
         max-height: 60px;
     }
@@ -36,6 +38,7 @@ export const Nav = styled.nav`
 
 export const CartButton = styled.button`
     margin-right: 50px;
+    margin-top: 30px;
     position: relative;
     cursor: pointer;
     border: none;

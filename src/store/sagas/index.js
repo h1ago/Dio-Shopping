@@ -9,7 +9,6 @@ function* getProducts(){
         yield put( {type: 'GET_CATALOG_PRODUCTS_SUCESS', payload: products} );
     } catch (error) {
         yield put( {type: 'GET_CATALOG_PRODUCTS_ERROR', payload: error} );
-        console.log(error);
     }
 
 }

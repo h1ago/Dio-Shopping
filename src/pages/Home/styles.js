@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
     display: grid;
     grid-template-columns: 0.7fr 3fr;
-    grid-template-rows: 15vh minmax(70vh, auto) 8vh;
+    grid-template-rows: auto minmax(70vh, auto) 8vh;
     grid-gap: 1vh;
 `;
 

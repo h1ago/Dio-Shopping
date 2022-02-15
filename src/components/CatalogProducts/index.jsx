@@ -1,25 +1,17 @@
 import React, {useEffect} from "react";
-import {
-    Container, 
-    Card,
-    ProductImage, 
-    ProductDiscount, 
-    ProductName, 
-    ProductPriceOld, 
-    ProductPrice 
-} from "./styles"
+import { Container } from "./styles"
 
-import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import Loading from "../Loading";
 import Error from "../Error";
+import CatalogItem from "./CatalogItem";
 
 
 
 export default function CatalogProducts(){
     const dispatch = useDispatch();
     const catalog = useSelector( state => state.catalog );
-    console.log(catalog);
+
     useEffect( () => {
         dispatch({type: 'GET_CATALOG_PRODUCTS'});
     }, [] );
@@ -33,33 +25,10 @@ export default function CatalogProducts(){
     return (
         <Container>
 
-
             {
                 catalog.products.map( (product, index) => (
-                        product.hidden != true &&
-                        <Card key={index}>
-                            <Link
-                                to={`/produto/${product.id}`}
-                                state={{product: product}}
-                            > 
-                                <ProductImage src={require('../../assets/products/' + product.image)}/>
-                                {
-                                    product.discount_percentage !== null &&   
-                                    <ProductDiscount>- {product.discount_percentage}%</ProductDiscount>
-                                }
-                                <ProductName>{product.name}</ProductName>
-                                
-                                {
-                                    product.discount_percentage !== null 
-                                    ?<>
-                                        <ProductPriceOld>{product.regular_price}</ProductPriceOld>
-                                        <ProductPrice>{product.actual_price}</ProductPrice>
-                                    </>
-                                    :<ProductPrice>{product.actual_price}</ProductPrice>
-                                }
-
-                            </Link>
-                        </Card>
+                    product.hidden !== true &&
+                        <CatalogItem key={index} product={product} />
                 ))
             }
 

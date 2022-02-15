@@ -1,11 +1,9 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
+import { Container, WrapperFooter, WrapperHeader, WrapperBody } from './styles';
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import { Container, WrapperFooter, WrapperHeader, WrapperBody } from './styles';
-
-import ProductDetail from '../../components/ProductDetail';
-
-import { useLocation } from "react-router-dom";
+import DetailProduct from '../../components/DetailProduct';
 
 export default function ProductInfo(){
     const location = useLocation();
@@ -19,7 +17,7 @@ export default function ProductInfo(){
                 </WrapperHeader>
 
                 <WrapperBody>
-                    <ProductDetail product={productSelected}/>
+                    <DetailProduct product={productSelected}/>
                 </WrapperBody>
 
                 <WrapperFooter>
