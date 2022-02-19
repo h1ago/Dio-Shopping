@@ -6,6 +6,8 @@
 - Axios
 - Styled Components
 - JavaScript - ES6
+- Grid
+- Flexbox
 
 
 # Imagens
